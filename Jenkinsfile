@@ -13,8 +13,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker build -t <dockerhub-username>/<repo-name>:0.0.1 .'
-                sh 'docker push <dockerhub-username>/<repo-name>:0.0.1'
+                sh 'docker build -t akram0907/eurecomlab:0.0.2 .'
+                sh 'docker push akram0907/eurecomlab:0.0.2'
             }
         }
     }
