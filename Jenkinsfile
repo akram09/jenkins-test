@@ -25,6 +25,7 @@
          }
          stage('Build') {
              steps {
+		 sh 'whoami'
                  sh 'docker build -t akram0907/eurecomlab:0.0.2 .'
                  sh 'docker push akram0907/eurecomlab:0.0.2'
              }
