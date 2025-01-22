@@ -3,18 +3,24 @@
      stages {
          stage('Lint') {
              steps {
-		 sh 'python3 -m venv venv'
-                 sh 'source venv/bin/activate'
-                 sh 'pip install flake8'
-                 sh 'flake8 app.py'
+		 sh '''
+		 #!/bin/bash
+		 python3 -m venv venv
+                 source venv/bin/activate
+                 pip install flake8
+                 flake8 app.py
+		 '''
              }
          }
          stage('Format') {
              steps {
-		 sh 'python3 -m venv venv'
-                 sh 'source venv/bin/activate'
-                 sh 'pip install flake8'
-                 sh 'black --check app.py'
+		 sh '''
+		 #!/bin/bash
+		 python3 -m venv venv
+                 source venv/bin/activate
+                 pip install flake8
+                 black --check app.py
+		 '''
              }
          }
          stage('Build') {
